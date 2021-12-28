@@ -34,18 +34,12 @@ class NotDetayViewController: UIViewController {
     }
     
     @IBAction func guncelleButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "", message: "Notunuz güncellendi", preferredStyle: .alert)
-        
         if !(notBaslikTextField.text!.isEmpty){
             if let baslik = notBaslikTextField.text, let icerik = notIcerikTextView.text ,let not = not{
                 self.notDetayPresenterNesnesi?.guncelle(not_id: not.not_id!, not_basligi: baslik, not_icerik: icerik)
                 
-                self.present(alert, animated: true, completion: nil)
-                //aler will dismiss in 1 secons
-                let when = DispatchTime.now() + 1
-                DispatchQueue.main.asyncAfter(deadline: when){
-                  alert.dismiss(animated: true, completion: nil)
-                }
+                //Not Güncelleme işlemi
+                alertTimer(title: "", mesaj: "Notunuz Güncellendi")
             }
         }
     }

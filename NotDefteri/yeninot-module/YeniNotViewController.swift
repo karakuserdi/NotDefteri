@@ -36,7 +36,9 @@ class YeniNotViewController: UIViewController {
     
     //MARK: - Helpers
     func configurePickers(){
-        types = ["Favourite","Important"]
+        types = ["Tür Seçiniz","Yapılacaklar","Önemli","Önemsiz"]
+        
+        notTuruTextField.text = "Tür Seçiniz"
         
         pickerView = UIPickerView()
         notTuruTextField.inputView = pickerView
@@ -50,7 +52,7 @@ class YeniNotViewController: UIViewController {
         
         let today = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
+        formatter.dateFormat = "dd/MM/yyyy"
         let gunumuz = formatter.string(from: today)
         tarihTextField.text = gunumuz
     }
@@ -62,7 +64,7 @@ class YeniNotViewController: UIViewController {
     
     @objc func tarihGoster(datePicker:UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         let alinanTarih = dateFormatter.string(from: datePicker.date)
         tarihTextField.text = alinanTarih
         
@@ -70,10 +72,14 @@ class YeniNotViewController: UIViewController {
     
     //MARK: - Actions
     @IBAction func kaydetButtonPressed(_ sender: Any) {
-        if !(notBaslikTextField.text!.isEmpty){
-            if let tarih = tarihTextField.text, let tur = notTuruTextField.text, let baslik = notBaslikTextField.text, let icerik = notIcerikTextView.text {
-                yenikayitPresenterNesnesi?.ekle(not_basligi: baslik, not_icerik: icerik, not_date: tarih, not_type: tur)
-                navigationController?.popViewController(animated: true)
+        if notTuruTextField.text == types[0]{
+            alertTimer(title: "", mesaj: "Lütfen not türü seçiniz")
+        }else{
+            if !(notBaslikTextField.text!.isEmpty){
+                if let tarih = tarihTextField.text, let tur = notTuruTextField.text, let baslik = notBaslikTextField.text, let icerik = notIcerikTextView.text {
+                    yenikayitPresenterNesnesi?.ekle(not_basligi: baslik, not_icerik: icerik, not_date: tarih, not_type: tur)
+                    navigationController?.popViewController(animated: true)
+                }
             }
         }
     }

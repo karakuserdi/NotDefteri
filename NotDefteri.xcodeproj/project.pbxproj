@@ -37,6 +37,7 @@
 		D4FB634D277B968D00BE0D61 /* NotDetayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB634C277B968D00BE0D61 /* NotDetayInteractor.swift */; };
 		D4FB634F277B973100BE0D61 /* NotDetayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB634E277B973100BE0D61 /* NotDetayPresenter.swift */; };
 		D4FB6351277B97BA00BE0D61 /* NotDetayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6350277B97BA00BE0D61 /* NotDetayRouter.swift */; };
+		D4FB6353277B9E7900BE0D61 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6352277B9E7900BE0D61 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		D4FB634C277B968D00BE0D61 /* NotDetayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDetayInteractor.swift; sourceTree = "<group>"; };
 		D4FB634E277B973100BE0D61 /* NotDetayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDetayPresenter.swift; sourceTree = "<group>"; };
 		D4FB6350277B97BA00BE0D61 /* NotDetayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDetayRouter.swift; sourceTree = "<group>"; };
+		D4FB6352277B9E7900BE0D61 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				D4CF1601277A508C00DD6C13 /* Assets.xcassets */,
 				D4CF1603277A508C00DD6C13 /* LaunchScreen.storyboard */,
 				D4CF1606277A508C00DD6C13 /* Info.plist */,
+				D4FB6352277B9E7900BE0D61 /* Extension.swift */,
 			);
 			path = NotDefteri;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				D4FB634B277B95CC00BE0D61 /* NotDetayProtocols.swift in Sources */,
 				D4CF160F277A527100DD6C13 /* AnasayfaViewController.swift in Sources */,
 				D4FB634D277B968D00BE0D61 /* NotDetayInteractor.swift in Sources */,
+				D4FB6353277B9E7900BE0D61 /* Extension.swift in Sources */,
 				D4FB6344277B924200BE0D61 /* YeniNotInteractor.swift in Sources */,
 				D4CF15F9277A508900DD6C13 /* AppDelegate.swift in Sources */,
 				D4B01FE9277B44A80026571D /* FMResultSet.m in Sources */,
