@@ -27,6 +27,12 @@ class AnasayfaViewController: UIViewController {
         AnasayfaRouter.createModule(ref: self)
         anasayfaPresenterNesnesi?.getir()
     }
+    
+    //sayfa tekrar çağırıldığında veriler tekrar yükleniyor ve tablo yenileniyor
+    override func viewWillAppear(_ animated: Bool) {
+        anasayfaPresenterNesnesi?.getir()
+        tableView.reloadData()
+    }
 
     func veritabaniKopyala(){
         let bundleYolu = Bundle.main.path(forResource: "notlarim", ofType: ".db")
@@ -59,11 +65,6 @@ class AnasayfaViewController: UIViewController {
 extension AnasayfaViewController: PresenterToViewAnasayfaProtocol{
     func vieweVeriGonder(notlarListesi: Array<Notlar>) {
         self.notlarListesi = notlarListesi
-        tableView.reloadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        anasayfaPresenterNesnesi?.getir()
         tableView.reloadData()
     }
 }
