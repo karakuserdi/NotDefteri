@@ -108,6 +108,8 @@ class Notlardao{
             print(error.localizedDescription)
         }
         
+        
+        
         db?.close()
         
         return liste

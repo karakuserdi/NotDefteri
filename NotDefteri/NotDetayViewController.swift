@@ -31,15 +31,24 @@ class NotDetayViewController: UIViewController {
     }
     
     @IBAction func guncelleButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "", message: "Notunuz güncellendi", preferredStyle: .alert)
+        
         if !(notBaslikTextField.text!.isEmpty){
             if let baslik = notBaslikTextField.text, let icerik = notIcerikTextView.text ,let not = not{
                 Notlardao().notGuncelle(not_id: not.not_id!, not_basligi: baslik, not_icerik: icerik)
+                
+                self.present(alert, animated: true, completion: nil)
+                //aler will dismiss in 1 secons
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                  alert.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
     
     @IBAction func silButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Notu silmek istediğinize emin misiniz?", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "Notu silmek istediğinize emin misiniz?", preferredStyle: .alert)
         
         let actionEvet = UIAlertAction(title: "Evet", style: .destructive) { action in
             if let not = self.not{
