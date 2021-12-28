@@ -29,6 +29,14 @@
 		D4CF160D277A509900DD6C13 /* Notlar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF160C277A509900DD6C13 /* Notlar.swift */; };
 		D4CF160F277A527100DD6C13 /* AnasayfaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF160E277A527100DD6C13 /* AnasayfaViewController.swift */; };
 		D4CF1611277A53AA00DD6C13 /* NotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF1610277A53AA00DD6C13 /* NotTableViewCell.swift */; };
+		D4FB6342277B922C00BE0D61 /* YeniNotProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6341277B922C00BE0D61 /* YeniNotProtocols.swift */; };
+		D4FB6344277B924200BE0D61 /* YeniNotInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6343277B924200BE0D61 /* YeniNotInteractor.swift */; };
+		D4FB6346277B925000BE0D61 /* YeniNotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6345277B925000BE0D61 /* YeniNotPresenter.swift */; };
+		D4FB6349277B926300BE0D61 /* YeniNotRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6348277B926300BE0D61 /* YeniNotRouter.swift */; };
+		D4FB634B277B95CC00BE0D61 /* NotDetayProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB634A277B95CC00BE0D61 /* NotDetayProtocols.swift */; };
+		D4FB634D277B968D00BE0D61 /* NotDetayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB634C277B968D00BE0D61 /* NotDetayInteractor.swift */; };
+		D4FB634F277B973100BE0D61 /* NotDetayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB634E277B973100BE0D61 /* NotDetayPresenter.swift */; };
+		D4FB6351277B97BA00BE0D61 /* NotDetayRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FB6350277B97BA00BE0D61 /* NotDetayRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +71,14 @@
 		D4CF160C277A509900DD6C13 /* Notlar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notlar.swift; sourceTree = "<group>"; };
 		D4CF160E277A527100DD6C13 /* AnasayfaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnasayfaViewController.swift; sourceTree = "<group>"; };
 		D4CF1610277A53AA00DD6C13 /* NotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotTableViewCell.swift; sourceTree = "<group>"; };
+		D4FB6341277B922C00BE0D61 /* YeniNotProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeniNotProtocols.swift; sourceTree = "<group>"; };
+		D4FB6343277B924200BE0D61 /* YeniNotInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeniNotInteractor.swift; sourceTree = "<group>"; };
+		D4FB6345277B925000BE0D61 /* YeniNotPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeniNotPresenter.swift; sourceTree = "<group>"; };
+		D4FB6348277B926300BE0D61 /* YeniNotRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeniNotRouter.swift; sourceTree = "<group>"; };
+		D4FB634A277B95CC00BE0D61 /* NotDetayProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDetayProtocols.swift; sourceTree = "<group>"; };
+		D4FB634C277B968D00BE0D61 /* NotDetayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDetayInteractor.swift; sourceTree = "<group>"; };
+		D4FB634E277B973100BE0D61 /* NotDetayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDetayPresenter.swift; sourceTree = "<group>"; };
+		D4FB6350277B97BA00BE0D61 /* NotDetayRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotDetayRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +123,16 @@
 			path = entitiy;
 			sourceTree = "<group>";
 		};
-		D4B01FF4277B4EF30026571D /* notekle-module */ = {
+		D4B01FF4277B4EF30026571D /* yeninot-module */ = {
 			isa = PBXGroup;
 			children = (
 				D4B01FF5277B4F1D0026571D /* YeniNotViewController.swift */,
+				D4FB6341277B922C00BE0D61 /* YeniNotProtocols.swift */,
+				D4FB6343277B924200BE0D61 /* YeniNotInteractor.swift */,
+				D4FB6345277B925000BE0D61 /* YeniNotPresenter.swift */,
+				D4FB6348277B926300BE0D61 /* YeniNotRouter.swift */,
 			);
-			path = "notekle-module";
+			path = "yeninot-module";
 			sourceTree = "<group>";
 		};
 		D4CF15EC277A508900DD6C13 = {
@@ -150,16 +170,28 @@
 				D4B01FDB277B44A70026571D /* NotDefteri-Bridging-Header.h */,
 				D4B01FED277B44D00026571D /* entitiy */,
 				D4B01FC9277B3AF80026571D /* anasayfa-module */,
-				D4B01FF4277B4EF30026571D /* notekle-module */,
+				D4B01FF4277B4EF30026571D /* yeninot-module */,
+				D4FB6340277B91F200BE0D61 /* notedetay-module */,
 				D4CF15F8277A508900DD6C13 /* AppDelegate.swift */,
 				D4CF15FA277A508900DD6C13 /* SceneDelegate.swift */,
 				D4CF15FE277A508900DD6C13 /* Main.storyboard */,
 				D4CF1601277A508C00DD6C13 /* Assets.xcassets */,
 				D4CF1603277A508C00DD6C13 /* LaunchScreen.storyboard */,
 				D4CF1606277A508C00DD6C13 /* Info.plist */,
-				D4B01FFE277B62B30026571D /* NotDetayViewController.swift */,
 			);
 			path = NotDefteri;
+			sourceTree = "<group>";
+		};
+		D4FB6340277B91F200BE0D61 /* notedetay-module */ = {
+			isa = PBXGroup;
+			children = (
+				D4B01FFE277B62B30026571D /* NotDetayViewController.swift */,
+				D4FB634A277B95CC00BE0D61 /* NotDetayProtocols.swift */,
+				D4FB634C277B968D00BE0D61 /* NotDetayInteractor.swift */,
+				D4FB634E277B973100BE0D61 /* NotDetayPresenter.swift */,
+				D4FB6350277B97BA00BE0D61 /* NotDetayRouter.swift */,
+			);
+			path = "notedetay-module";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,14 +269,20 @@
 			files = (
 				D4B01FD7277B3F8B0026571D /* AnasayfaRouter.swift in Sources */,
 				D4CF1611277A53AA00DD6C13 /* NotTableViewCell.swift in Sources */,
+				D4FB634F277B973100BE0D61 /* NotDetayPresenter.swift in Sources */,
 				D4B01FD1277B3B4E0026571D /* AnasayfaProtocols.swift in Sources */,
 				D4B01FEF277B44E30026571D /* Notlardao.swift in Sources */,
 				D4B01FE7277B44A80026571D /* FMDatabase.m in Sources */,
+				D4FB634B277B95CC00BE0D61 /* NotDetayProtocols.swift in Sources */,
 				D4CF160F277A527100DD6C13 /* AnasayfaViewController.swift in Sources */,
+				D4FB634D277B968D00BE0D61 /* NotDetayInteractor.swift in Sources */,
+				D4FB6344277B924200BE0D61 /* YeniNotInteractor.swift in Sources */,
 				D4CF15F9277A508900DD6C13 /* AppDelegate.swift in Sources */,
 				D4B01FE9277B44A80026571D /* FMResultSet.m in Sources */,
+				D4FB6342277B922C00BE0D61 /* YeniNotProtocols.swift in Sources */,
 				D4B01FFF277B62B30026571D /* NotDetayViewController.swift in Sources */,
 				D4CF15FB277A508900DD6C13 /* SceneDelegate.swift in Sources */,
+				D4FB6349277B926300BE0D61 /* YeniNotRouter.swift in Sources */,
 				D4B01FEA277B44A80026571D /* FMDatabaseAdditions.m in Sources */,
 				D4CF160D277A509900DD6C13 /* Notlar.swift in Sources */,
 				D4B01FF6277B4F1D0026571D /* YeniNotViewController.swift in Sources */,
@@ -252,6 +290,8 @@
 				D4B01FEB277B44A80026571D /* FMDatabasePool.m in Sources */,
 				D4B01FD5277B3E870026571D /* AnasayfaPresenter.swift in Sources */,
 				D4B01FD3277B3E250026571D /* AnasayfaInteractor.swift in Sources */,
+				D4FB6346277B925000BE0D61 /* YeniNotPresenter.swift in Sources */,
+				D4FB6351277B97BA00BE0D61 /* NotDetayRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

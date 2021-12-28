@@ -20,9 +20,13 @@ class YeniNotViewController: UIViewController {
     var datePicker:UIDatePicker?
     var pickerView:UIPickerView?
     
+    var yenikayitPresenterNesnesi: ViewToPresenterYeniNotProtocol?
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        YeniNotRouter.createModule(ref: self)
         
         configurePickers()
         
@@ -68,7 +72,7 @@ class YeniNotViewController: UIViewController {
     @IBAction func kaydetButtonPressed(_ sender: Any) {
         if !(notBaslikTextField.text!.isEmpty){
             if let tarih = tarihTextField.text, let tur = notTuruTextField.text, let baslik = notBaslikTextField.text, let icerik = notIcerikTextView.text {
-                Notlardao().notEkle(not_basligi: baslik, not_icerik: icerik, not_date: tarih, not_type: tur)
+                yenikayitPresenterNesnesi?.ekle(not_basligi: baslik, not_icerik: icerik, not_date: tarih, not_type: tur)
                 navigationController?.popViewController(animated: true)
             }
         }

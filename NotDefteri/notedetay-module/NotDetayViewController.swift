@@ -10,6 +10,7 @@ import UIKit
 class NotDetayViewController: UIViewController {
     
     var not:Notlar?
+    var notDetayPresenterNesnesi:ViewToPresenterNotDetayProtocol?
     
     @IBOutlet weak var tarihTextField: UITextField!
     @IBOutlet weak var notTuruTextField: UITextField!
@@ -20,6 +21,8 @@ class NotDetayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotDetayRouter.createModule(ref: self)
         
         if let not = not {
             tarihTextField.text = not.not_date
@@ -35,7 +38,7 @@ class NotDetayViewController: UIViewController {
         
         if !(notBaslikTextField.text!.isEmpty){
             if let baslik = notBaslikTextField.text, let icerik = notIcerikTextView.text ,let not = not{
-                Notlardao().notGuncelle(not_id: not.not_id!, not_basligi: baslik, not_icerik: icerik)
+                self.notDetayPresenterNesnesi?.guncelle(not_id: not.not_id!, not_basligi: baslik, not_icerik: icerik)
                 
                 self.present(alert, animated: true, completion: nil)
                 //aler will dismiss in 1 secons
@@ -52,7 +55,7 @@ class NotDetayViewController: UIViewController {
         
         let actionEvet = UIAlertAction(title: "Evet", style: .destructive) { action in
             if let not = self.not{
-                Notlardao().notSilme(not_id: not.not_id!)
+                self.notDetayPresenterNesnesi?.sil(not_id: not.not_id!)
                 self.navigationController?.popViewController(animated: true)
             }
         }
