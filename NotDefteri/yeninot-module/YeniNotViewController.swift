@@ -56,7 +56,6 @@ class YeniNotViewController: UIViewController {
         tarihTextField.text = gunumuz
     }
     
-    
     @objc func dokunmaAlgilamaMethod(){
         view.endEditing(true)
     }
