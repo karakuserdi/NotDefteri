@@ -16,9 +16,14 @@ class AnasayfaInteractor:PresenterToInteractorAnasayfaProtocol{
         anasayfaPresenter?.presenteraVeriGonder(notlarListesi: notlarListesi)
     }
     
-    func notlardaAra(kisi_ad: String) {
+    func notlardaAra(not_basligi: String) {
         var notListesi = [Notlar]()
-        notListesi = Notlardao().notAra(not_basligi: kisi_ad)
+        notListesi = Notlardao().notAra(not_basligi: not_basligi)
+        anasayfaPresenter?.presenteraVeriGonder(notlarListesi: notListesi)
+    }
+    func notTurleri(not_type: String) {
+        var notListesi = [Notlar]()
+        notListesi = Notlardao().notTurleri(not_type: not_type)
         anasayfaPresenter?.presenteraVeriGonder(notlarListesi: notListesi)
     }
 }

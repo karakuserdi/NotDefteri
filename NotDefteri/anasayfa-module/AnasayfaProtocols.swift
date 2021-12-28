@@ -10,7 +10,8 @@ import Foundation
 protocol PresenterToInteractorAnasayfaProtocol{
     var anasayfaPresenter: InteractorToPresenterAnasayfaProtocol? {get set}
     func tumNotlariGetir()
-    func notlardaAra(kisi_ad:String)
+    func notlardaAra(not_basligi:String)
+    func notTurleri(not_type:String)
 }
 
 protocol ViewToPresenterAnasayfaProtocol{
@@ -18,7 +19,8 @@ protocol ViewToPresenterAnasayfaProtocol{
     var anasayfaView: PresenterToViewAnasayfaProtocol? {get set}
     
     func getir()
-    func ara(kisi_ad:String)
+    func ara(not_basligi:String)
+    func turler(not_type:String)
 }
 
 protocol InteractorToPresenterAnasayfaProtocol{

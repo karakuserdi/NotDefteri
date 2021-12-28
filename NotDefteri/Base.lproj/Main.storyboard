@@ -22,7 +22,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PBh-fM-enE">
-                                <rect key="frame" x="0.0" y="191" width="414" height="671"/>
+                                <rect key="frame" x="0.0" y="222" width="414" height="640"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notCell" rowHeight="106" id="UqM-hI-3aP" customClass="NotTableViewCell" customModule="NotDefteri" customModuleProvider="target">
@@ -127,25 +127,41 @@
                                     <segue destination="BLF-gt-PeI" kind="show" id="064-ug-QEY"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="GxJ-jM-GI2">
+                                <rect key="frame" x="0.0" y="191" width="414" height="32"/>
+                                <segments>
+                                    <segment title="Tümü"/>
+                                    <segment title="Yapılacaklar"/>
+                                    <segment title="Önemli"/>
+                                    <segment title="Önemsiz"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="6Ge-lZ-P3M"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
-                            <constraint firstItem="PBh-fM-enE" firstAttribute="top" secondItem="KfL-42-aok" secondAttribute="bottom" id="ARo-53-lRU"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PBh-fM-enE" secondAttribute="trailing" id="CIA-CE-5Wh"/>
-                            <constraint firstItem="PBh-fM-enE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Eya-ag-1In"/>
+                            <constraint firstItem="GxJ-jM-GI2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ACD-c7-DNg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZrP-LM-5IM" secondAttribute="trailing" constant="32" id="HFA-Fv-orw"/>
+                            <constraint firstItem="PBh-fM-enE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Hvo-1U-zSd"/>
+                            <constraint firstItem="GxJ-jM-GI2" firstAttribute="top" secondItem="KfL-42-aok" secondAttribute="bottom" id="QMC-WP-J0P"/>
                             <constraint firstItem="KfL-42-aok" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S3D-mm-nfV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PBh-fM-enE" secondAttribute="bottom" id="XNJ-Qs-6xd"/>
+                            <constraint firstItem="PBh-fM-enE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ye1-uC-hIQ"/>
+                            <constraint firstItem="PBh-fM-enE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cBt-3u-cF5"/>
                             <constraint firstItem="KfL-42-aok" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fU5-Lv-CiF"/>
+                            <constraint firstItem="PBh-fM-enE" firstAttribute="top" secondItem="GxJ-jM-GI2" secondAttribute="bottom" id="lld-Ql-kFU"/>
                             <constraint firstItem="KfL-42-aok" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nBD-A8-AVH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZrP-LM-5IM" secondAttribute="bottom" constant="32" id="odE-1a-p7x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GxJ-jM-GI2" secondAttribute="trailing" id="z5Q-Pr-CWI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notlarım" id="D9S-Q0-4nv"/>
                     <connections>
                         <outlet property="addNewNoteButton" destination="ZrP-LM-5IM" id="6wC-dv-5bN"/>
                         <outlet property="searchBar" destination="KfL-42-aok" id="r9B-vJ-EZi"/>
+                        <outlet property="segmentedControl" destination="GxJ-jM-GI2" id="dik-sk-EX2"/>
                         <outlet property="tableView" destination="PBh-fM-enE" id="AbM-6o-XXY"/>
                         <segue destination="ZjA-8R-UYG" kind="show" identifier="toNotum" id="xX9-1Q-E02"/>
                     </connections>

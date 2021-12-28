@@ -14,11 +14,13 @@ class AnasayfaViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addNewNoteButton: UIButton!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var anasayfaPresenterNesnesi:ViewToPresenterAnasayfaProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         veritabaniKopyala()
         
@@ -30,6 +32,7 @@ class AnasayfaViewController: UIViewController {
     
     //sayfa tekrar çağırıldığında veriler tekrar yükleniyor ve tablo yenileniyor
     override func viewWillAppear(_ animated: Bool) {
+        segmentedControl.selectedSegmentIndex = 0
         anasayfaPresenterNesnesi?.getir()
         tableView.reloadData()
     }
@@ -56,12 +59,27 @@ class AnasayfaViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        
         addNewNoteButton.layer.cornerRadius = 30
+    }
+    
+    //MARK: - SegmentedControlAction
+    @IBAction func segmentedControlAction(_ sender: Any) {
+        switch (segmentedControl.selectedSegmentIndex) {
+        case 0:
+            anasayfaPresenterNesnesi?.getir()
+        case 1:
+            anasayfaPresenterNesnesi?.turler(not_type: "Yapılacaklar")
+        case 2:
+            anasayfaPresenterNesnesi?.turler(not_type: "Önemli")
+        default:
+            anasayfaPresenterNesnesi?.turler(not_type: "Önemsiz")
+        }
+        tableView.reloadData()
     }
     
 }
 
+//MARK: - PresenterToViewAnasayfaProtocol
 extension AnasayfaViewController: PresenterToViewAnasayfaProtocol{
     func vieweVeriGonder(notlarListesi: Array<Notlar>) {
         self.notlarListesi = notlarListesi
@@ -69,6 +87,7 @@ extension AnasayfaViewController: PresenterToViewAnasayfaProtocol{
     }
 }
 
+//MARK: - UITableViewDelegate,UITableViewDataSource
 extension AnasayfaViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notlarListesi.count
@@ -102,8 +121,9 @@ extension AnasayfaViewController:UITableViewDelegate,UITableViewDataSource{
     }
 }
 
+//MARK: - UISearchBarDelegate
 extension AnasayfaViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        anasayfaPresenterNesnesi?.ara(kisi_ad: searchText)
+        anasayfaPresenterNesnesi?.ara(not_basligi: searchText.lowercased())
     }
 }

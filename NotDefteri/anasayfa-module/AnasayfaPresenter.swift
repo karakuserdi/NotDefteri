@@ -15,8 +15,11 @@ class AnasayfaPresenter:ViewToPresenterAnasayfaProtocol{
         anasayfaInteractor?.tumNotlariGetir()
     }
     
-    func ara(kisi_ad: String) {
-        anasayfaInteractor?.notlardaAra(kisi_ad: kisi_ad)
+    func ara(not_basligi: String) {
+        anasayfaInteractor?.notlardaAra(not_basligi: not_basligi)
+    }
+    func turler(not_type: String) {
+        anasayfaInteractor?.notTurleri(not_type: not_type)
     }
     
 }

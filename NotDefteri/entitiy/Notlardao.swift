@@ -116,12 +116,12 @@ class Notlardao{
     }
     
     
-    func notTurleri(not_basligi:String) -> [Notlar] {
+    func notTurleri(not_type:String) -> [Notlar] {
         var liste = [Notlar]()
         db?.open()
         
         do{
-            let rs = try db!.executeQuery("SELECT * FROM notlar WHERE not_basligi like '%\(not_basligi)%'", values: nil)
+            let rs = try db!.executeQuery("SELECT * FROM notlar WHERE not_type like '\(not_type)'", values: nil)
             
             while rs.next(){
                 let not = Notlar(
