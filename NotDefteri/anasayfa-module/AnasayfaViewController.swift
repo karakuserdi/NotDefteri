@@ -63,7 +63,7 @@ extension AnasayfaViewController: PresenterToViewAnasayfaProtocol{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        notlarListesi = Notlardao().tumNotlariListele()
+        anasayfaPresenterNesnesi?.getir()
         tableView.reloadData()
     }
 }

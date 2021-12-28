@@ -19,7 +19,6 @@ class YeniNotViewController: UIViewController {
     
     var datePicker:UIDatePicker?
     var pickerView:UIPickerView?
-    
     var yenikayitPresenterNesnesi: ViewToPresenterYeniNotProtocol?
     
     //MARK: - Lifecycle
@@ -67,7 +66,6 @@ class YeniNotViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         let alinanTarih = dateFormatter.string(from: datePicker.date)
         tarihTextField.text = alinanTarih
-        
     }
     
     //MARK: - Actions
