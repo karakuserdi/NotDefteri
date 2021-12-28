@@ -53,7 +53,7 @@ class AnasayfaViewController: UIViewController {
     }
     
     func configureUI(){
-        searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Ara", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Arama Yap", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         
         searchBar.delegate = self
         tableView.delegate = self
