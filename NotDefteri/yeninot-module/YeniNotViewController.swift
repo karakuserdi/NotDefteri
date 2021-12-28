@@ -51,7 +51,7 @@ class YeniNotViewController: UIViewController {
         
         let today = Date()
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "MM.dd.yyyy HH:mm"
         let gunumuz = formatter.string(from: today)
         tarihTextField.text = gunumuz
     }
@@ -63,7 +63,7 @@ class YeniNotViewController: UIViewController {
     
     @objc func tarihGoster(datePicker:UIDatePicker){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "MM.dd.yyyy HH:mm"
         let alinanTarih = dateFormatter.string(from: datePicker.date)
         tarihTextField.text = alinanTarih
     }
