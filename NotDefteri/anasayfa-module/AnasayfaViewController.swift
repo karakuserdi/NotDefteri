@@ -21,9 +21,7 @@ class AnasayfaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         veritabaniKopyala()
-        
         configureUI()
         
         AnasayfaRouter.createModule(ref: self)
@@ -55,6 +53,8 @@ class AnasayfaViewController: UIViewController {
     }
     
     func configureUI(){
+        searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Ara", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
