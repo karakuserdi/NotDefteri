@@ -75,7 +75,9 @@ class YeniNotViewController: UIViewController {
         if notTuruTextField.text == types[0]{
             alertTimer(title: "", mesaj: "Lütfen not türü seçiniz")
         }else{
-            if !(notBaslikTextField.text!.isEmpty){
+            if (notBaslikTextField.text!.isEmpty){
+                alertTimer(title: "", mesaj: "Lütfen not başlığı yazınız")
+            }else{
                 if let tarih = tarihTextField.text, let tur = notTuruTextField.text, let baslik = notBaslikTextField.text, let icerik = notIcerikTextView.text {
                     yenikayitPresenterNesnesi?.ekle(not_basligi: baslik, not_icerik: icerik, not_date: tarih, not_type: tur)
                     navigationController?.popViewController(animated: true)
